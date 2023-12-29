@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Darknet';
+    font-weight: 600;
+    src: url("../fonts/dark-net-font/Darknet-K7xOX.woff") format('woff'),
+        url("../fonts/dark-net-font/Darknet-K7xOX.woff2") format('woff2');
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Space+Mono&display=swap');
+
+.work {
+    border: 1px solid purple;
+    
+}
