@@ -7,7 +7,7 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Space+Mono&display=swap');
 
-/* PROJECTS SECTION */
+/* CODE FOR SCROLLPAGE */
 * {
     margin: 0;
     padding: 0;
@@ -16,163 +16,66 @@
     background-position: center;
 }
 
-.container {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
+.grid {
+    border: 2px blue solid;
+    width: 100%;
     height: 100vh;
-}
-
-section {
-    height: 100vh;
-    display: flex;
-    justify-content:center;
-    align-items: flex-start;
-    scroll-snap-align: start;
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(5, 20%);
+  }
+  
+  .box {
     text-align: center;
-}
-
-h1 {
-    color: #ffffff;
-    text-shadow: 1px 1px 4px #000;
-    font-size: 100px;
-}
-
-.one {
-    background-color: lightgreen;
-    background-image: url("../images/bg1.png");
-    color: orange;
-    background-size: cover;
-}
-
-.two {
-    background-image: url("../images/bg2.jpeg");
-    color: #a9d5de;
-    background-color: #44556f
-
-}
-
-.three {
-    background-color: #222f43;
-}
-
-.four {
-    background-color: orange;
-}
-
-#TBRPG {
-    color: orange;
-}
-
-
-
-
-
-
-
-
-
-
-/* HOME SECTION */
-.homepage {
-    font-size: 42px;
-    text-align: center;
-}
-
+    background-color: beige;
+    color: black;
+    border-radius: 5px;
+    border: 2px dodgerblue solid;
+  }
 
 #projects {
-    position: absolute;
-    border: 1px solid red;
-    width: 60%;
-    height: 40%;
-    display: inline-block;
-    display: flex;
-    align-items: center; /* Vertically center the content */
-    justify-content: center; /* Horizontally center the content */
-    
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    min-width: 2fr;
+    max-width: 3fr;
+    min-height: 2fr;
+    max-height: 3fr;
 }
 
 #about {
-    position: absolute;
-    border: 1px solid blue;
-    width: 40%;
-    height: 60%;
-    display: inline-block;
-    left: 60%;
-    display: flex;
-    align-items: center; /* Vertically center the content */
-    justify-content: center; /* Horizontally center the content */
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    min-width: 2fr;
+    max-width: 3fr;
+    min-height: 2fr;
+    max-height: 3fr;
 }
 
 #contact {
-    position: absolute;
-    border: 1px solid blue;
-    width: 40%;
-    height: 60%;
-    display: inline-block;
-    margin-top: 40vh;
-    display: flex;
-    align-items: center; /* Vertically center the content */
-    justify-content: center; /* Horizontally center the content */
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 6;
+    min-width: 2fr;
+    max-width: 3fr;
+    min-height: 2fr;
+    max-height: 3fr;
 }
 
 #follow {
-    position: absolute;
-    border: 1px solid blue;
-    width: 60%;
-    height: 40%;
-    display: inline-block;
-    top: 60%;
-    left:40%;
-    display: flex;
-    align-items: center; /* Vertically center the content */
-    justify-content: center; /* Horizontally center the content */
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 4;
+    grid-row-end: 6;
+    min-width: 2fr;
+    max-width: 3fr;
+    min-height: 2fr;
+    max-height: 3fr;
 }
 
-#center-logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* Set the size of the logo as needed */
-    width: 20%; /* example width */
-    height: 20%; /* example height */
-    /* Additional styling as needed */
-    border: 1px solid green; /* For visibility */
-    display: flex;
-    align-items: center; /* Vertically center the content */
-    justify-content: center; /* Horizontally center the content */
-}
-
-.homepage:hover {
+.box:hover {
     background-color: grey;
 }
-
-
-
-
-
-#projects, #about, #contact, #follow {
-    transition: all 0.5s ease; /* smooth transition for all properties over 0.5 seconds */
-}
-
-#projects:hover {
-    width: 70%; /* Increase width */
-    height: 50vh; /* Increase height */
-}
-
-#about:hover {
-    width: 50%; /* Increase width */
-    height: 70vh; /* Increase height */
-}
-
-#contact:hover {
-    width: 50%; /* Increase width */
-    height: 70vh; /* Increase height */
-}
-
-#follow:hover {
-    width: 70%; /* Increase width */
-    height: 50vh; /* Increase height */
-}
-
-/* Adjust the non-hovered elements accordingly */
