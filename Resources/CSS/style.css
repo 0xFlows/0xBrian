@@ -26,6 +26,7 @@
 }
   
 .box {
+    font-size: 36px;
     text-align: center;
     background-color: #44556f;
     color: black;
@@ -50,7 +51,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../Assets/Images/0xBrian.PNG'); /* Adjust path as needed */
+    background-image: url('../../Assets/Images/Text\ Logo\ Black.png'); /* Adjust path as needed */
     background-size: cover;
     background-position: center;
     opacity: 0; /* Start fully transparent */
@@ -76,7 +77,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../Assets/Images/Game Reward.png'); /* Adjust path as needed */
+    background-image: url('../../Assets/Images/0xBrian.PNG'); /* Adjust path as needed */
     background-size: cover;
     background-position: center;
     opacity: 0; /* Start fully transparent */
