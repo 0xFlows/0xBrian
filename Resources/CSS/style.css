@@ -18,9 +18,8 @@
 }
 
 .grid {
-    border: 2px blue solid;
     width: 100%;
-    height: 100vh;
+    height: 92vh;
     display: grid;
     grid-template: repeat(5, 1fr) / repeat(5, 20%);
 }
@@ -34,6 +33,58 @@
     display: grid;
     place-items: center;
 }
+
+/* NAV section ----------------------------------------------------------------------*/
+
+.navbar {
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    color: white;
+    padding: 20px 20px;
+    width: 100%;
+    border: none;
+  }
+  
+.navlogo {
+    background-color: #000000;
+}
+
+  .nav-links, .nav-links li {
+    list-style: none;
+    padding: 0;
+    background-color: #000000;
+  }
+  
+  .nav-links li {
+    display: inline;
+    margin-right: 20px;
+    background-color: #000000;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    background-color: #000000;
+  }
+
+  .nav-links a:hover {
+    color: grey;
+  }
+  
+  #connectWallet {
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  #connectWallet:hover {
+    background-color: #0056b3;
+  }
 
 /* PROJECTS section ----------------------------------------------------------------------*/
 #projects {
