@@ -7,7 +7,7 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Space+Mono&display=swap');
 
-/* CODE FOR SCROLLPAGE */
+/* GENERAL section ----------------------------------------------------------------------*/
 * {
     margin: 0;
     padding: 0;
@@ -32,6 +32,7 @@
     border: 2px dodgerblue solid;
 }
 
+/* PROJECTS section ----------------------------------------------------------------------*/
 #projects {
     grid-row-start: 1;
     grid-row-end: 3;
@@ -58,40 +59,80 @@
     opacity: 1; /* Fully visible on hover */
 }
 
-
+/* ABOUT section ----------------------------------------------------------------------*/
 #about {
     grid-column-start: 4;
     grid-column-end: 6;
     grid-row-start: 1;
     grid-row-end: 4;
-    min-width: 2fr;
-    max-width: 3fr;
-    min-height: 2fr;
-    max-height: 3fr;
+    position: relative; /* Make sure this is here to position the inner div correctly */
 }
 
+.about-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../Assets/Images/Game Reward.png'); /* Adjust path as needed */
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Start fully transparent */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for the opacity */
+}
+
+#about:hover .about-bg {
+    opacity: 1; /* Fully visible on hover */
+}
+
+/* CONTACT section ----------------------------------------------------------------------*/
 #contact {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 6;
-    min-width: 2fr;
-    max-width: 3fr;
-    min-height: 2fr;
-    max-height: 3fr;
+    position: relative; /* Make sure this is here to position the inner div correctly */
 }
 
+.contact-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../Assets/Images/Game Reward.png'); /* Adjust path as needed */
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Start fully transparent */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for the opacity */
+}
+
+#contact:hover .contact-bg {
+    opacity: 1; /* Fully visible on hover */
+}
+
+/* FOLLOW section ----------------------------------------------------------------------*/
 #follow {
     grid-column-start: 3;
     grid-column-end: 6;
     grid-row-start: 4;
     grid-row-end: 6;
-    min-width: 2fr;
-    max-width: 3fr;
-    min-height: 2fr;
-    max-height: 3fr;
+    position: relative; /* Make sure this is here to position the inner div correctly */
 }
 
-.box:hover {
-    background-color: grey;
+.follow-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../Assets/Images/Game Reward.png'); /* Adjust path as needed */
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Start fully transparent */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for the opacity */
+}
+
+#follow:hover .follow-bg {
+    opacity: 1; /* Fully visible on hover */
 }
