@@ -14,6 +14,7 @@
     box-sizing: border-box;
     font-family: 'Darknet', 'Poppins', sans-serif;
     background-position: center;
+    background-color: #44556f;
 }
 
 .grid {
@@ -26,10 +27,11 @@
   
 .box {
     text-align: center;
-    background-color: beige;
+    background-color: #44556f;
     color: black;
-    border-radius: 5px;
     border: 2px dodgerblue solid;
+    display: grid;
+    place-items: center;
 }
 
 /* PROJECTS section ----------------------------------------------------------------------*/
