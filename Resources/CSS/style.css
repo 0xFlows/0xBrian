@@ -22,26 +22,42 @@
     height: 100vh;
     display: grid;
     grid-template: repeat(5, 1fr) / repeat(5, 20%);
-  }
+}
   
-  .box {
+.box {
     text-align: center;
     background-color: beige;
     color: black;
     border-radius: 5px;
     border: 2px dodgerblue solid;
-  }
+}
 
 #projects {
-    grid-column-start: 1;
-    grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 3;
-    min-width: 2fr;
-    max-width: 3fr;
-    min-height: 2fr;
-    max-height: 3fr;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    /* Existing styles */
+    position: relative; /* Make sure this is here to position the inner div correctly */
 }
+
+.project-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../Assets/Images/Game Reward.png'); /* Adjust path as needed */
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Start fully transparent */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for the opacity */
+}
+
+#projects:hover .project-bg {
+    opacity: 1; /* Fully visible on hover */
+}
+
 
 #about {
     grid-column-start: 4;
