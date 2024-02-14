@@ -32,14 +32,20 @@
                 <div class="contact-bg"></div>
                 <h2>Contact</h2>
             </div>
-            <div class="box follow" id="follow">
-                <div class="follow-bg"></div>
-                <h2>Follow</h2>
+            <div class="box 1-min-interviews" id="interviews">
+                <div class="interview-bg"></div>
+                <h2>Perspectives</h2>
             </div>
-            <div class="box logo" id="center-logo">
-                <h2>Logo</h2>
+            <div class="box unlock" id="unlock">
+                <form>
+                    <label for="code" id="unlock-label">Unlock</label>
+                    <input type="password" id="code" placeholder="Your code...">
+                    <button type="submit" onclick="unlockCheck()">Submit</button>
+                </form>
             </div>
         </div>
         <script src="./Resources/JS/fade-in.js"></script>
+        <script src="./Resources/JS/wallet-connect.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
     </body>
 </html>

@@ -1,4 +1,4 @@
-/* FADE EVENT LISTENERS ----------------------------------------------------------*/ */
+/* FADE EVENT LISTENERS ----------------------------------------------------------*/
 document.addEventListener('DOMContentLoaded', function() {
     /* PROJECT LISTENERS */
     var projectBox = document.getElementById('projects');

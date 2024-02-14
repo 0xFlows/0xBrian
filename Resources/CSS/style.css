@@ -28,8 +28,8 @@
     font-size: 36px;
     text-align: center;
     background-color: #44556f;
-    color: black;
-    border: 2px dodgerblue solid;
+    color: white;
+    border: 2px black solid;
     display: grid;
     place-items: center;
 }
@@ -41,41 +41,44 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000000;
-    color: white;
+    color: black;
     padding: 20px 20px;
     width: 100%;
     border: none;
+    background-image: url(../../Assets/Images/Cityskyline-colored.webp);
+    background-position: 50% 0;
+    border: 2px solid black;
   }
   
 .navlogo {
-    background-color: #000000;
+    background-color: transparent;
+    color: white;
 }
 
   .nav-links, .nav-links li {
     list-style: none;
     padding: 0;
-    background-color: #000000;
+    background-color: transparent;
   }
   
   .nav-links li {
     display: inline;
     margin-right: 20px;
-    background-color: #000000;
+    background-color: transparent;
   }
   
   .nav-links a {
     color: white;
     text-decoration: none;
-    background-color: #000000;
+    background-color: transparent;
   }
 
   .nav-links a:hover {
-    color: grey;
+    color: grey
   }
   
   #connectWallet {
-    background-color: dodgerblue;
+    background-color: black;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -83,7 +86,7 @@
   }
   
   #connectWallet:hover {
-    background-color: #0056b3;
+    background-color: grey;
   }
 
 /* PROJECTS section ----------------------------------------------------------------------*/
@@ -102,7 +105,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../Assets/Images/Text\ Logo\ Black.png'); /* Adjust path as needed */
+    background-image: url('../../Assets/Images/projects-art.webp'); /* Adjust path as needed */
     background-size: cover;
     background-position: center;
     opacity: 0; /* Start fully transparent */
@@ -154,9 +157,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../Assets/Images/Game Reward.png'); /* Adjust path as needed */
+    background-image: url('../../Assets/Images/Contact-art.webp'); /* Adjust path as needed */
     background-size: cover;
-    background-position: center;
+    background-position: 10% 0;
     opacity: 0; /* Start fully transparent */
     transition: opacity 0.5s ease-in-out; /* Smooth transition for the opacity */
 }
@@ -165,8 +168,8 @@
     opacity: 1; /* Fully visible on hover */
 }
 
-/* FOLLOW section ----------------------------------------------------------------------*/
-#follow {
+/* INTERVIEWS section ----------------------------------------------------------------------*/
+#interviews {
     grid-column-start: 3;
     grid-column-end: 6;
     grid-row-start: 4;
@@ -174,19 +177,50 @@
     position: relative; /* Make sure this is here to position the inner div correctly */
 }
 
-.follow-bg {
+.interview-bg {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../Assets/Images/Game Reward.png'); /* Adjust path as needed */
+    background-image: url('../../Assets/Images/perspectives-art.webp'); /* Adjust path as needed */
     background-size: cover;
-    background-position: center;
+    background-position: 50% 0;
     opacity: 0; /* Start fully transparent */
     transition: opacity 0.5s ease-in-out; /* Smooth transition for the opacity */
 }
 
-#follow:hover .follow-bg {
+#interviews:hover .interview-bg {
     opacity: 1; /* Fully visible on hover */
+}
+
+/* UNLOCK section ----------------------------------------------------------------------*/
+.box.unlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.box.unlock form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box.unlock label,
+.box.unlock input[type="password"],
+.box.unlock button {
+    margin: 8px 0;
+}
+
+.box.unlock input[type="password"],
+.box.unlock button {
+    width: 80%;
+    max-width: 400px;
+    color: white;
 }
