@@ -45,7 +45,7 @@
     padding: 20px 20px;
     width: 100%;
     border: none;
-    background-image: url(../../Assets/Images/Cityskyline-colored.webp);
+    background-image: url(../../Assets/Images/Cityskyline-colored.jpg);
     background-position: 50% 0;
     border: 2px solid black;
   }
@@ -105,7 +105,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../Assets/Images/projects-art.webp'); /* Adjust path as needed */
+    background-image: url('../../Assets/Images/Projects-art.jpg'); /* Adjust path as needed */
     background-size: cover;
     background-position: center;
     opacity: 0; /* Start fully transparent */
@@ -157,7 +157,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../Assets/Images/Contact-art.webp'); /* Adjust path as needed */
+    background-image: url('../../Assets/Images/Contact-art.jpg'); /* Adjust path as needed */
     background-size: cover;
     background-position: 10% 0;
     opacity: 0; /* Start fully transparent */
@@ -183,9 +183,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../Assets/Images/perspectives-art.webp'); /* Adjust path as needed */
+    background-image: url('../../Assets/Images/Perspectives-art.jpg'); /* Adjust path as needed */
     background-size: cover;
-    background-position: 50% 0;
+    background-position: 50% 70%;
     opacity: 0; /* Start fully transparent */
     transition: opacity 0.5s ease-in-out; /* Smooth transition for the opacity */
 }
