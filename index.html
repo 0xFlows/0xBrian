@@ -37,16 +37,16 @@
                 <h2>Perspectives</h2>
             </div>
             <div class="box unlock" id="unlock">
-                <form>
-                    <label for="code" id="unlock-label">Unlock</label>
-                    <input type="password" id="code" placeholder="Your code...">
-                    <button type="submit" id="submitButton">Submit</button>
+                <form id="mintForm">
+                    <label for="mintAmount">Amount:</label>
+                    <input type="number" id="mintAmount" name="mintAmount" min="1" max="10" step="1" required>
+                    <button type="submit" id="submitButton">Mint NFT</button>
                 </form>
             </div>
         </div>
         <script src="./Resources/JS/fade-in.js"></script>
         <script src="./Resources/JS/Sepolia-connect.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
-        <script src="./Resources/JS/Mint.js"></script>
+        <script src="./Resources/JS/app.js"></script>
     </body>
 </html>
