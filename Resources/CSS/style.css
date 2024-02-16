@@ -34,6 +34,12 @@
     place-items: center;
 }
 
+.box a {
+    text-decoration: none;
+    color: white;
+    cursor:crosshair;
+}
+
 /* NAV section ----------------------------------------------------------------------*/
 
 .navbar {

@@ -21,20 +21,28 @@
         </nav>
         <div class="grid">
             <div class="box projects" id="projects">
-                <div class="project-bg"></div> <!-- New inner div for the background image -->
-                <h2>Projects</h2>
+                <a href="./projects.html">
+                    <div class="project-bg"></div> <!-- New inner div for the background image -->
+                    <h2>Projects</h2>
+                </a>
             </div>
             <div class="box about" id="about">
-                <div class="about-bg"></div>
-                <h2>About</h2>
+                <a href="./about.html">
+                    <div class="about-bg"></div>
+                    <h2>About</h2>
+                </a>
             </div>
             <div class="box contact" id="contact">
-                <div class="contact-bg"></div>
-                <h2>Contact</h2>
+                <a href="./contact.html">
+                    <div class="contact-bg"></div>
+                    <h2>Contact</h2>
+                </a>
             </div>
             <div class="box 1-min-interviews" id="interviews">
-                <div class="interview-bg"></div>
-                <h2>Perspectives</h2>
+                <a href="./perspectives.html">
+                    <div class="interview-bg"></div>
+                    <h2>Perspectives</h2>
+                </a>
             </div>
             <div class="box unlock" id="unlock">
                 <form id="mintForm">
@@ -42,12 +50,14 @@
                     <input type="number" id="mintAmount" name="mintAmount" min="1" max="10" step="1" required>
                     <button type="submit" id="submitButton">Mint NFT</button>
                 </form>
+                <form id="agreement">
+                    <button type="submit" id="agreeButton">I agree</button>
+                </form>
             </div>
         </div>
         <script src="./Resources/JS/fade-in.js"></script>
         <script src="./Resources/JS/Sepolia-connect.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
         <script src="./Resources/JS/app.js"></script>
-        
     </body>
 </html>
