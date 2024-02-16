@@ -1,45 +1,55 @@
-// Check for Ethereum provider
-if (typeof window.ethereum !== 'undefined') {
-    console.log('Ethereum successfully detected!');
+document.addEventListener('DOMContentLoaded', function () {
+    const connectWalletButton = document.getElementById('connectWallet');
 
-    // Access the decentralized web!
-    const ethereum = window.ethereum;
-
-    // Request account access
-    async function connectWallet() {
+    // Function to switch to the Goerli testnet
+    async function switchToGoerli() {
         try {
-            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-            console.log('Connected', accounts[0]);
-            document.getElementById('connectWallet').innerText = 'Wallet Connected';
-        } catch (error) {
-            console.error('Error connecting to MetaMask:', error);
+            await window.ethereum.request({
+                method: 'wallet_switchEthereumChain',
+                params: [{ chainId: '0xaa36a7' }], // Chain ID for Sepolia Testnet is 0xaa36a7
+            });
+        } catch (switchError) {
+            // This error code indicates that the chain has not been added to MetaMask
+            if (switchError.code === 4902) {
+                try {
+                    await window.ethereum.request({
+                        method: 'wallet_addEthereumChain',
+                        params: [{
+                            chainId: '0xaa36a7',
+                            rpcUrl: 'https://sepolia.infura.io/v3/6166faa9a2614cf8a6b4f1a1301c4a98', // Replace YOUR_PROJECT_ID with your actual Infura Project ID
+                            chainName: 'Sepolia Test Network',
+                            nativeCurrency: {
+                                name: 'ETH',
+                                symbol: 'ETH', // 2-6 characters long
+                                decimals: 18,
+                            },
+                            blockExplorerUrls: ['https://sepolia.etherscan.io/']
+                        }],
+                    });
+                } catch (addError) {
+                    // Handle error while adding Goerli network
+                    console.error('Failed to add the Sepolia network', addError);
+                }
+            }
+            console.error('Failed to switch to the Sepolia network', switchError);
         }
     }
 
-    // Connect wallet on button click
-    document.getElementById('connectWallet').addEventListener('click', connectWallet);
-
-    // Handle account and network changes
-    ethereum.on('accountsChanged', (accounts) => {
-        // Handle the new accounts, or lack thereof.
-        // "accounts" will always be an array, but it can be empty.
-        if (accounts.length === 0) {
-            console.log('Please connect to MetaMask.');
-            document.getElementById('connectWallet').innerText = 'Connect Wallet';
+    // Function to handle wallet connection and network switch
+    async function connectAndSwitchNetwork() {
+        if (window.ethereum) { // Check if MetaMask is installed
+            try {
+                await window.ethereum.request({ method: 'eth_requestAccounts' }); // Request account access
+                await switchToGoerli(); // Switch to Goerli Testnet
+                connectWalletButton.innerText = 'Wallet Connected';
+            } catch (error) {
+                console.error('An error occurred:', error);
+            }
         } else {
-            console.log('Connected', accounts[0]);
-            document.getElementById('connectWallet').innerText = 'Wallet Connected';
+            console.log('Please install MetaMask!');
         }
-    });
+    }
 
-    ethereum.on('chainChanged', (chainId) => {
-        // Handle the new chain.
-        // You could also use this event to detect the user changing to a chain your DApp does not support and notify them.
-        console.log('Chain changed to', chainId);
-        window.location.reload();
-    });
-} else {
-    // If no Ethereum provider is detected, log an error or display a message to the user.
-    console.log('Please install MetaMask!');
-    document.getElementById('connectWallet').innerText = 'Install MetaMask';
-}
+    // Add event listener to the connect wallet button
+    connectWalletButton.addEventListener('click', connectAndSwitchNetwork);
+});
