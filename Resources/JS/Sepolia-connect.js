@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const connectWalletButton = document.getElementById('connectWallet');
+    const mintButton = document.getElementById('submitButton');
 
     // Function to switch to the Goerli testnet
     async function switchToGoerli() {

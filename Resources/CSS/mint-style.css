@@ -1,60 +1,11 @@
-.navbar {
-    height: 8vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: black;
-    padding: 20px 20px;
-    width: 100%;
-    border: none;
-    background-image: url(../../Assets/Images/Cityskyline-colored.jpg);
-    background-position: 50% 0;
-    border: 2px solid black;
-  }
-  
-.navlogo {
-    background-color: transparent;
-    color: white;
+
+.nav-links, .navbar, #connectWallet {
+  box-sizing: border-box;
+  font-family: 'Darknet', 'Poppins', sans-serif;
 }
 
-  .nav-links, .nav-links li {
-    list-style: none;
-    padding: 0;
-    background-color: transparent;
-  }
-  
-  .nav-links li {
-    display: inline;
-    margin-right: 20px;
-    background-color: transparent;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    background-color: transparent;
-  }
-
-  .nav-links a:hover {
-    color: grey
-  }
-  
-  #connectWallet {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  #connectWallet:hover {
-    background-color: grey;
-  }
-
-
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background: #f4f4f4;
@@ -73,6 +24,7 @@ h1 {
 
 main {
     padding: 20px;
+    font-family: 'Poppins', 'Arial', sans-serif;
 }
 
 .nft-gallery h2 {
@@ -123,4 +75,110 @@ main {
     .genre {
         width: 80%;
     }
+}
+
+/* FONT section ----------------------------------------------------------------------*/
+
+@font-face {
+  font-family: 'Darknet';
+  font-weight: 600;
+  src: url("../fonts/dark-net-font/Darknet-K7xOX.woff") format('woff'),
+      url("../fonts/dark-net-font/Darknet-K7xOX.woff2") format('woff2');
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Space+Mono&display=swap');
+
+/* NAV section ----------------------------------------------------------------------*/
+
+.navbar {
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  padding: 20px 20px;
+  width: 100%;
+  border: none;
+  background-image: url(../../Assets/Images/Cityskyline-colored.jpg);
+  background-position: 50% 0;
+  border: 2px solid black;
+}
+
+.navlogo {
+  background-color: transparent;
+  color: white;
+}
+
+.nav-links, .nav-links li {
+  list-style: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+.nav-links li {
+  display: inline;
+  margin-right: 20px;
+  background-color: transparent;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.nav-links a:hover {
+  color: grey
+}
+
+#connectWallet {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#connectWallet:hover {
+  background-color: grey;
+}
+
+/*SEARCH style ----------------------------------------------------------------------*/
+
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.search-bar {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/*BANNER style ----------------------------------------------------------------------*/
+
+.banner {
+  position: relative;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
+}
+
+.close-banner {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
 }
