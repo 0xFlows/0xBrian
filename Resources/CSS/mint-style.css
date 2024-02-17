@@ -31,14 +31,14 @@ main {
     text-align: center;
 }
 
-.genres {
+.NFTs {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 20px;
 }
 
-.genre {
+.NFT {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -48,8 +48,9 @@ main {
     text-align: center;
 }
 
-.genre h3 {
+.NFT h3 {
     margin: 0 0 20px 0;
+    font-family: 'Darknet', 'Poppins', sans-serif;
 }
 
 .mint-btn {
