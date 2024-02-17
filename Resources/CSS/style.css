@@ -216,12 +216,17 @@
 }
 
 .box.unlock:hover h2 {
-    background-color: transparent;
     opacity: 0;
     transition: opacity 0.5s ease-in-out; /* Optional: smooth transition for the opacity change */
 }
 
+.box.unlock:hover {
+    background-color: black;
+    transition: 0.5s ease-in-out;
+}
+
 .unlock canvas {
     position: absolute;
+    left: 1px;
     z-index: 1; /* Ensure canvas is below text but above the background */
 }
