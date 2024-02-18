@@ -218,6 +218,7 @@
 .box.unlock:hover h2 {
     opacity: 0;
     transition: opacity 0.5s ease-in-out; /* Optional: smooth transition for the opacity change */
+    background-color: transparent;
 }
 
 .box.unlock:hover {

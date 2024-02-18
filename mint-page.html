@@ -27,21 +27,24 @@
         </div>
         <div class="banner">
             <button class="close-banner">X</button>
-            <p>Your promotional message or announcement here!</p>
+            <p>Please ensure that you are connected to the Sepolia test network before minting. To connect, please click "Connect Wallet"</p>
         </div>
         <section class="nft-gallery">
             <h2>NFTs</h2>
             <div class="NFTs">
                 <div class="NFT C0ncepts">
                     <h3>C0ncepts</h3>
-                    <form id="C0nceptsMintForm">
+                    <div class="nft-img">
+                    <img src="./Assets/Images/C0ncepts1.png">
+                    </div>
+                    <form class="mintForm" id="C0nceptsMintForm">
                         <label for="mintAmount">Amount:</label>
-                        <input type="number" id="mintAmount" name="mintAmount" min="1" max="10" step="1" required>
-                        <button type="submit" id="submitButton">Mint for Free</button>
+                        <input type="number" class="mintAmount" name="C0nceptsMintAmount" min="1" max="10" step="1" required>
+                        <button type="submit" class="mint-btn">Mint for Free</button>
                     </form>
                 </div>
                 <div class="NFT music">
-                    <h3>Music</h3>
+                    <h3>EvoMon</h3>
                     <button class="mint-btn">Mint for Free</button>
                 </div>
                 <div class="NFT virtual-worlds">
@@ -52,16 +55,6 @@
                     <h3>Collectibles</h3>
                     <button class="mint-btn">Mint for Free</button>
                 </div>
-            </div>
-            <div class="box unlock" id="unlock">
-                <form id="mintForm">
-                    <label for="mintAmount">Amount:</label>
-                    <input type="number" id="mintAmount" name="mintAmount" min="1" max="10" step="1" required>
-                    <button type="submit" id="submitButton">Mint NFT</button>
-                </form>
-                <form id="agreement">
-                    <button type="submit" id="agreeButton">I agree</button>
-                </form>
             </div>
         </section>
     </main>

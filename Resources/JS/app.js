@@ -666,9 +666,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Event listener for the mint form
-    document.getElementById('mintForm').addEventListener('submit', async function (event) {
+    document.getElementById('C0nceptsMintForm').addEventListener('submit', async function (event) {
         event.preventDefault(); // Prevent the form from submitting in the traditional manner
-        const amount = document.getElementById('mintAmount').value; // Get the amount from the form
+        const amount = document.getElementsByName('C0nceptsMintAmount').value; // Get the amount from the form
         await mintNFT(amount); // Call the mintNFT function with the amount
     });
 });
