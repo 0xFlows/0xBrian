@@ -1,0 +1,124 @@
+/* styles.css */
+
+header {
+    text-align: center;
+    padding: 32px 0;
+    color: white;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 0 16px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+section {
+    margin-bottom: 32px;
+    background-color: white;
+}
+
+section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    background-color: white;
+}
+.text-gray-700 {
+    color: black;
+    background-color: white;
+}
+
+input[type="text"] {
+    padding: 8px 16px;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid white;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #4299e1;
+}
+
+@font-face {
+    font-family: 'Darknet';
+    font-weight: 600;
+    src: url("../fonts/dark-net-font/Darknet-K7xOX.woff") format('woff'),
+        url("../fonts/dark-net-font/Darknet-K7xOX.woff2") format('woff2');
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Space+Mono&display=swap');
+
+/* GENERAL section ----------------------------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Darknet', 'Poppins', sans-serif;
+    background-position: center;
+    background-color: #44556f;
+}
+
+
+/* NAV section ----------------------------------------------------------------------*/
+
+.navbar {
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    padding: 20px 20px;
+    width: 100%;
+    border: none;
+    background-image: url(../../Assets/Images/Cityskyline-colored.jpg);
+    background-position: 50% 0;
+    border: 2px solid black;
+  }
+  
+.navlogo {
+    background-color: transparent;
+    color: white;
+}
+
+  .nav-links, .nav-links li {
+    list-style: none;
+    padding: 0;
+    background-color: transparent;
+  }
+  
+  .nav-links li {
+    display: inline;
+    margin-right: 20px;
+    background-color: transparent;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+  }
+
+  .nav-links a:hover {
+    color: grey
+  }
+  
+  #connectWallet {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  #connectWallet:hover {
+    background-color: grey;
+  }
