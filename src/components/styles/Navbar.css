@@ -1,0 +1,54 @@
+/* NAV section ----------------------------------------------------------------------*/
+
+.navbar {
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    padding: 20px 20px;
+    width: 100%;
+    border: none;
+    background-image: url(../../../public/Assets/Cityskyline-colored.jpg);
+    background-position: 50% 0;
+    border: 2px solid black;
+  }
+  
+.navlogo {
+    background-color: transparent;
+    color: white;
+}
+
+  .nav-links, .nav-links li {
+    list-style: none;
+    padding: 0;
+    background-color: transparent;
+  }
+  
+  .nav-links li {
+    display: inline;
+    margin-right: 20px;
+    background-color: transparent;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+  }
+
+  .nav-links a:hover {
+    color: grey
+  }
+  
+  #connectWallet {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  #connectWallet:hover {
+    background-color: grey;
+  }
