@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/0xBrian/static/css/main.45762e41.css",
+    "main.js": "/0xBrian/static/js/main.ff24ac3f.js",
+    "static/js/453.9d54b9b1.chunk.js": "/0xBrian/static/js/453.9d54b9b1.chunk.js",
+    "static/media/Perspectives-art.jpg": "/0xBrian/static/media/Perspectives-art.be43944b852015826998.jpg",
+    "static/media/0xBrian.PNG": "/0xBrian/static/media/0xBrian.47708a2a8aa8324f31ec.PNG",
+    "static/media/Contact-art.jpg": "/0xBrian/static/media/Contact-art.1e8ca1d5f9e57b349d25.jpg",
+    "static/media/Cityskyline-colored.jpg": "/0xBrian/static/media/Cityskyline-colored.f4dff15f9fd523133ba7.jpg",
+    "static/media/Projects-art.jpg": "/0xBrian/static/media/Projects-art.3ebe332039bd4e950199.jpg",
+    "index.html": "/0xBrian/index.html",
+    "main.45762e41.css.map": "/0xBrian/static/css/main.45762e41.css.map",
+    "main.ff24ac3f.js.map": "/0xBrian/static/js/main.ff24ac3f.js.map",
+    "453.9d54b9b1.chunk.js.map": "/0xBrian/static/js/453.9d54b9b1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.45762e41.css",
+    "static/js/main.ff24ac3f.js"
+  ]
+}
