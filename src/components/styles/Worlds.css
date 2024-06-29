@@ -1,0 +1,56 @@
+.worlds-canvas {
+    background-color: black !important;
+  }
+  
+  .button-container {
+    position: absolute;
+    top: 75%;
+    z-index: 1;
+  }
+  
+  .button-container.left {
+    left: 40%;
+  }
+  
+  .button-container.right {
+    right: 40%;
+  }
+  
+  .scroller {
+    background: linear-gradient(145deg, #5165F6, #A43FFF);
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .scroller:hover {
+    background: linear-gradient(145deg, #A43FFF, #5165F6);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .scroller:focus {
+    outline: none;
+  }
+  
+  .current-object {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+  }
+  
