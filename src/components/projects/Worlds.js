@@ -5,6 +5,7 @@ import { OrbitControls, Html } from '@react-three/drei';
 import { useSpring, animated } from '@react-spring/three';
 import { BoxGeometry, MeshBasicMaterial } from 'three';
 import { StadiumModel } from '../objects/Stadium';
+import { EvomonModel } from '../objects/Evomon';
 import "../styles/Worlds.css";
 
 // Extend the three namespace with the BoxGeometry and MeshBasicMaterial
@@ -19,6 +20,19 @@ function AnimatedStadiumModel({ isHovered, shift, offset }) {
   return (
     <animated.group position={position}>
       <StadiumModel />
+    </animated.group>
+  );
+}
+
+function AnimatedEvomonModel({ isHovered, shift, offset }) {
+  const { position } = useSpring({
+    position: isHovered ? [shift + offset, 10, 0] : [shift + offset, 0, 0],
+    config: { duration: 500 },
+  });
+
+  return (
+    <animated.group position={position}>
+      <EvomonModel />
     </animated.group>
   );
 }
@@ -109,7 +123,7 @@ function Home() {
           <directionalLight position={[0, 10, 10]} intensity={1.5} />
           <Suspense fallback={<Html center><span>Loading...</span></Html>}>
             <AnimatedStadiumModel isHovered={isHoveredStadium} shift={shift} offset={0} />
-            <AnimatedStadiumModel isHovered={isHoveredSphere} shift={shift} offset={400} />
+            <AnimatedEvomonModel isHovered={isHoveredSphere} shift={shift} offset={400} />
             <HoverBox
               onPointerOver={() => setIsHoveredStadium(true)}
               onPointerOut={() => setIsHoveredStadium(false)}
