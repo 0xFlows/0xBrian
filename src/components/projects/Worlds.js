@@ -1,15 +1,15 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense, useEffect, useRef } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import { Canvas, extend } from '@react-three/fiber';
+import { Canvas, extend, useFrame } from '@react-three/fiber';
 import { OrbitControls, Html } from '@react-three/drei';
 import { useSpring, animated } from '@react-spring/three';
-import { BoxGeometry, MeshBasicMaterial } from 'three';
+import { BoxGeometry, MeshBasicMaterial, Points, PointsMaterial, BufferGeometry, Float32BufferAttribute } from 'three';
 import { StadiumModel } from '../objects/Stadium';
 import { EvomonModel } from '../objects/Evomon';
 import "../styles/Worlds.css";
 
-// Extend the three namespace with the BoxGeometry and MeshBasicMaterial
-extend({ BoxGeometry, MeshBasicMaterial });
+// Extend the three namespace with the necessary components
+extend({ BoxGeometry, MeshBasicMaterial, Points, PointsMaterial, BufferGeometry, Float32BufferAttribute });
 
 function AnimatedStadiumModel({ isHovered, shift, offset }) {
   const { position } = useSpring({
@@ -67,12 +67,38 @@ function SpeechBubble({ isHovered, position, text }) {
   return isHovered ? (
     <animated.group position={pos}>
       <Html center>
-        <div style={{ backgroundColor: 'white', padding: '5px 10px', borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.3)' }}>
+        <div className="speech-bubble">
           {text}
         </div>
       </Html>
     </animated.group>
   ) : null;
+}
+
+function Stars({ maxSize }) {
+  const pointsRef = useRef();
+
+  useEffect(() => {
+    const starsGeometry = new BufferGeometry();
+    const starsMaterial = new PointsMaterial({ color: 0xffffff, size: maxSize });
+    const starsCount = 5000;
+    const positions = new Float32Array(starsCount * 3);
+    const sizes = new Float32Array(starsCount);
+
+    for (let i = 0; i < starsCount; i++) {
+      positions[i * 3] = (Math.random() - 0.5) * 2000;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 2000;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 2000;
+      sizes[i] = Math.random() * maxSize;
+    }
+
+    starsGeometry.setAttribute('position', new Float32BufferAttribute(positions, 3));
+    starsGeometry.setAttribute('size', new Float32BufferAttribute(sizes, 1));
+    pointsRef.current.geometry = starsGeometry;
+    pointsRef.current.material = starsMaterial;
+  }, [maxSize]);
+
+  return <points ref={pointsRef}></points>;
 }
 
 function Home() {
@@ -83,7 +109,7 @@ function Home() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/draftables'); // Change '/new-route' to your desired route
+    navigate('/draftables');
   };
 
   const handleCanvasError = (error) => {
@@ -94,9 +120,9 @@ function Home() {
     setShift((prevShift) => {
       const newShift = prevShift + direction * 400;
       if (newShift > 0) {
-        return 0; // Limit the shift to 0 (cannot shift further to the right)
+        return 0;
       } else if (newShift < -400) {
-        return -400; // Limit the shift to -400 (cannot shift further to the left)
+        return -400;
       } else {
         return newShift;
       }
@@ -122,6 +148,7 @@ function Home() {
           <ambientLight intensity={0.5} />
           <directionalLight position={[0, 10, 10]} intensity={1.5} />
           <Suspense fallback={<Html center><span>Loading...</span></Html>}>
+            <Stars maxSize={5} />
             <AnimatedStadiumModel isHovered={isHoveredStadium} shift={shift} offset={0} />
             <AnimatedEvomonModel isHovered={isHoveredSphere} shift={shift} offset={400} />
             <HoverBox
@@ -130,16 +157,25 @@ function Home() {
               onClick={handleClick}
               position={[shift, 0, 0]}
             />
-            <SpeechBubble isHovered={isHoveredStadium} position={[shift, 50, 0]} text="Draftables" />
+            <SpeechBubble isHovered={isHoveredStadium} position={[shift, 10, 0]} text="Draftables" />
             <HoverBox
               onPointerOver={() => setIsHoveredSphere(true)}
               onPointerOut={() => setIsHoveredSphere(false)}
               onClick={handleClick}
               position={[shift + 400, 0, 0]}
             />
-            <SpeechBubble isHovered={isHoveredSphere} position={[shift + 400, 50, 0]} text="Evomon" />
+            <SpeechBubble isHovered={isHoveredSphere} position={[shift + 400, 10, 0]} text="Evomon" />
           </Suspense>
-          <OrbitControls target={[0, 0, 0]} />
+          <OrbitControls 
+            target={[0, 0, 0]} 
+            enablePan={false}
+            enableZoom={false}
+            mouseButtons={{
+              LEFT: 0,
+              MIDDLE: -1,
+              RIGHT: -1
+            }}
+          />
         </Canvas>
         <div className="button-container left">
           <button className="scroller right" onClick={() => handleShift(1)}>&larr;</button>
